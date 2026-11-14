@@ -212,6 +212,5 @@ servicios, y los servicios usan los repositorios.
 
 ## 7. Uso de inteligencia artificial
 
-Se utilizó un asistente de IA (Claude, de Anthropic) como apoyo para generar una
-primera versión del código a partir del diseño de la Fase 2. El equipo revisó,
+Se utilizó un asistente de IA (Claude, de Anthropic) como apoyo. El equipo revisó, programó,
 ejecutó y probó el código, y es responsable de explicar cada archivo, clase y función.
