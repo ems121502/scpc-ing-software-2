@@ -1,0 +1,43 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}SCPC{% endblock %} · SCPC</title>
+  <link rel="stylesheet" href="{% static 'css/scpc.css' %}">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="marca">
+      <span class="marca-sigla">SCPC</span>
+      <span class="marca-nombre">Sistema de Control de Productos Centralizado · Clínica XYZ</span>
+    </div>
+    {% if usuario %}
+    <div class="usuario-actual">
+      <span>{{ usuario.nombre_completo }}</span>
+      <span class="etiqueta-rol">{{ usuario.rol.nombre }}</span>
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="contenedor">
+    <!-- CU-02: menú lateral; lo construye menu.js con las opciones que devuelve GET /api/menu -->
+    <aside class="menu-lateral">
+      <ul id="opciones-menu"><li class="cargando">Cargando menú…</li></ul>
+    </aside>
+
+    <main class="contenido">
+      <div id="mensajes-globales">
+        {% for mensaje in messages %}
+          <div class="mensaje mensaje-{{ mensaje.tags }}">{{ mensaje }}</div>
+        {% endfor %}
+      </div>
+      {% block contenido %}{% endblock %}
+    </main>
+  </div>
+
+  <script src="{% static 'js/api.js' %}"></script>
+  <script src="{% static 'js/menu.js' %}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

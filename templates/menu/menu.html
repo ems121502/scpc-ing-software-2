@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block titulo %}Menú principal{% endblock %}
+{% block contenido %}
+  <h1>Menú principal</h1>
+  <section class="panel">
+    <p>Bienvenido(a), <strong>{{ usuario.nombre_completo }}</strong>.</p>
+    <p>Rol: <strong>{{ usuario.rol.nombre }}</strong></p>
+    <p>Seleccione una tarea en el menú lateral. Solo se muestran las opciones permitidas para su rol.</p>
+  </section>
+{% endblock %}

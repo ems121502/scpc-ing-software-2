@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block titulo %}{{ titulo }}{% endblock %}
+{% block contenido %}
+  <h1>{{ titulo }}</h1>
+  <section class="panel">
+    <p>Este módulo forma parte de la arquitectura general del SCPC, pero
+       <strong>no está dentro del alcance de implementación de la Fase 3</strong>
+       (solo se implementan CU-01, CU-02 y CU-03).</p>
+    <p>El acceso a esta pantalla sí está controlado por rol: si su rol no tuviera
+       esta opción, el sistema respondería “Acceso restringido”.</p>
+    <a class="boton" href="/menu/">Volver al menú</a>
+  </section>
+{% endblock %}
