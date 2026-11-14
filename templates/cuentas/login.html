@@ -1,0 +1,43 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio de sesión · SCPC</title>
+  <link rel="stylesheet" href="{% static 'css/scpc.css' %}">
+</head>
+<body class="pagina-login">
+  <!-- CU-01 Inicio de Sesión (prototipo de la Fase 1 con los ajustes de la Fase 2) -->
+  <main class="tarjeta-login">
+    <div class="login-marca">SCPC</div>
+    <h1>Bienvenido(a)</h1>
+    <p class="login-texto">
+      Sistema de Control de Productos Centralizado de la Clínica XYZ:
+      inventario de productos médicos y solicitudes de compra.
+    </p>
+
+    <div id="mensaje-login" class="mensaje oculto" role="alert"></div>
+
+    <form id="form-login" novalidate>
+      <label for="usuario">Usuario</label>
+      <input id="usuario" name="usuario" type="text" maxlength="30" autocomplete="username" required>
+      <div class="msg-error" id="error-usuario"></div>
+
+      <label for="contrasena">Contraseña</label>
+      <input id="contrasena" name="contrasena" type="password" autocomplete="current-password" required>
+      <div class="msg-error" id="error-contrasena"></div>
+
+      <label class="casilla">
+        <input id="recordarme" type="checkbox"> Recuérdame
+      </label>
+
+      <button id="btn-siguiente" type="submit" class="boton boton-primario boton-ancho">Siguiente</button>
+    </form>
+
+    <p class="login-ayuda">¿Olvidó su contraseña? Contacte al administrador del sistema.</p>
+  </main>
+
+  <script src="{% static 'js/api.js' %}"></script>
+  <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>
