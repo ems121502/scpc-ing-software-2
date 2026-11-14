@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo %}Solicitud de compra{% endblock %}
+{% block contenido %}
+  <h1>Órdenes de compra · Solicitud de compra</h1>
+
+  <div id="mensaje-solicitud" class="mensaje oculto" role="alert"></div>
+
+  <!-- Cabecera automática, no editable (RN-13) -->
+  <section class="panel cabecera-solicitud">
+    <div>
+      <label>No. solicitud</label>
+      <input id="cab-numero" type="text" readonly>
+      <small>Provisional: el número definitivo se asigna al guardar.</small>
+    </div>
+    <div>
+      <label>Fecha</label>
+      <input id="cab-fecha" type="text" readonly>
+    </div>
+    <div>
+      <label>Solicitante</label>
+      <input id="cab-solicitante" type="text" readonly>
+    </div>
+  </section>
+
+  <!-- Líneas de la solicitud -->
+  <section class="panel">
+    <table class="tabla" id="tabla-lineas">
+      <thead>
+        <tr>
+          <th>Cód. producto</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Observación</th>
+          <th>Prioridad</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-lineas"></tbody>
+    </table>
+    <datalist id="lista-productos"></datalist>
+
+    <div class="acciones">
+      <button type="button" id="btn-agregar" class="boton">+ Agregar solicitud</button>
+      <span class="espaciador"></span>
+      <button type="button" id="btn-cancelar" class="boton">Cancelar</button>
+      <button type="button" id="btn-guardar" class="boton boton-primario">Guardar</button>
+    </div>
+  </section>
+
+  <h2>Mis solicitudes</h2>
+  <section id="mis-solicitudes" class="panel">
+    <p class="cargando">Cargando…</p>
+  </section>
+{% endblock %}
+{% block scripts %}
+  <script src="{% static 'js/solicitud.js' %}"></script>
+{% endblock %}
