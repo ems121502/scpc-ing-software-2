@@ -6,7 +6,7 @@ Son las mismas que hace la pantalla (DD-05), con los mensajes de la tabla
 from catalogo.repositories import ProductoRepository
 
 from .models import DetalleSolicitud
-
+# Mensajes de Retroalimentacion de datos faltantes
 MSG_CAMPOS_VACIOS = "Algunos de los campos no han sido llenados"
 MSG_SIN_LINEAS = "La solicitud debe tener al menos una línea de producto"
 MSG_PRODUCTO_VACIO = "Seleccione un producto"
@@ -17,6 +17,7 @@ MSG_PRIORIDAD = "Seleccione una prioridad"
 MSG_OBSERVACION_ALTA = "Justifique la prioridad Alta"
 MSG_OBSERVACION_LARGA = "La observación admite máximo 250 caracteres"
 
+# Limites de valores funcionales en las entradas numericas 
 CANTIDAD_MIN, CANTIDAD_MAX = 1, 9999
 PRIORIDADES_VALIDAS = {DetalleSolicitud.ALTA, DetalleSolicitud.MEDIA, DetalleSolicitud.BAJA}
 
@@ -92,7 +93,7 @@ class ValidadorSolicitud:
                     "prioridad": prioridad,
                     "observacion": observacion,
                 })
-
+        # Control de campos vacios
         if hay_vacios:
             general.append(MSG_CAMPOS_VACIOS)
         if general or por_linea:
