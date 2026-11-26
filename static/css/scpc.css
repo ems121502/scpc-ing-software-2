@@ -73,7 +73,7 @@ small { color: #6b7785; font-size: .75rem; }
 #tabla-lineas td:nth-child(1) { width: 17%; }
 #tabla-lineas td:nth-child(2) { width: 25%; }
 #tabla-lineas td:nth-child(3) { width: 11%; }
-#tabla-lineas td:nth-child(5) { width: 13%; }
+#tabla-lineas td:nth-child(5) { width: 15%; min-width: 140px; }
 #tabla-lineas td:nth-child(6) { width: 6%; text-align: center; }
 .tabla-compacta td, .tabla-compacta th { padding: .35rem .5rem; font-size: .88rem; }
 
